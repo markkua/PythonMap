@@ -14,11 +14,13 @@ ax.stock_img()      # 底图
 ny_lon, ny_lat = -75, 43
 delhi_lon, delhi_lat = 77.23, 28.61
 
+# 绘制大地线
 plt.plot([ny_lon, delhi_lon], [ny_lat, delhi_lat],
-         color='blue', linewidth=2, marker='o',
+         color='blue', linewidth=1, marker='o',
          transform=ccrs.Geodetic(),
          )
 
+# 绘制PlateCaree线
 plt.plot([ny_lon, delhi_lon], [ny_lat, delhi_lat],
          color='gray', linestyle='--',
          transform=ccrs.PlateCarree(),
@@ -34,6 +36,6 @@ plt.text(delhi_lon + 3, delhi_lat - 12, 'Delhi',
 
 
 # Save the plot by calling plt.savefig() BEFORE plt.show()
-plt.savefig('./map_output/output_map.svg')
+# plt.savefig('./map_output/output_map.svg')
 
 plt.show()
